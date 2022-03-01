@@ -2,10 +2,10 @@ import './App.css';
 
 import {Formik, Field, Form, ErrorMessage} from 'formik'
 import * as yup from 'yup'
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const initialValues = {
     name: '',
     preparation_time: '',
@@ -26,6 +26,8 @@ function App() {
       slices_of_bread
     } = values;
 
+    setIsSubmitting(true);
+
     const getData = () => {
       switch(values.type){
         case 'pizza':
@@ -37,7 +39,7 @@ function App() {
         default:
           return {}
     }}
-    
+
     fetch('https://frosty-wood-6558.getsandbox.com:443/dishes', {
       headers:{
         "Content-Type": "application/json"
@@ -46,7 +48,10 @@ function App() {
       body: JSON.stringify(getData())
     })
     .then(response => response.json())
-    .then(JSONdata => console.log(JSONdata))
+    .then(JSONdata => {
+      setIsSubmitting(false);
+      console.log(JSONdata)
+    })
   }
 
   return (
@@ -64,7 +69,7 @@ function App() {
       })}
       onSubmit={onSubmit}
       >
-        {({values, isSubmitting, handleChange}) => <>
+        {({values, handleChange}) => <>
           <Form>
             <label htmlFor='name'>Name</label>
             <ErrorMessage name="name">
@@ -127,7 +132,7 @@ function App() {
             <button 
             type="submit" 
             disabled={isSubmitting}>
-              submit
+              Submit
             </button>
             
           </Form>

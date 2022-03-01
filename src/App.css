@@ -17,8 +17,8 @@ select::-ms-expand {
 form{
   display: grid;
   justify-content: center;
-  width: 30vw;
-  padding: 2rem 5rem;
+  width: 30rem;
+  padding: 4rem 5rem;
   background-color: rgb(29, 29, 29);
   border-radius: 0 0 1rem 0;
 }
@@ -32,6 +32,10 @@ form{
   border: none;
   background-color: transparent;
   color: rgb(199, 199, 199);
+}
+
+label{
+  margin-bottom: 0.3rem;
 }
 
 select option{
@@ -53,6 +57,7 @@ input[type="time"]::-webkit-calendar-picker-indicator{
 
 .field-error{
   color: rgb(235, 88, 88);
+  margin-bottom: 0.3rem;
 }
 
 button{
@@ -62,6 +67,12 @@ button{
   border: none;
   border-radius: 1rem;
   background-color: rgb(88, 202, 88);
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+button:hover{
+  background-color: rgb(115, 211, 115);
 }
 
 /*
