@@ -1,14 +1,13 @@
-# Getting Started with Create React App
+# Set Up
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To set up the project clone the git repository, and run
 
-## Available Scripts
+### `npm install`
 
-In the project directory, you can run:
+then to run the app in the develpment mode you can run
 
 ### `npm start`
 
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
